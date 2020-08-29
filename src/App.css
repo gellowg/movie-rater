@@ -1,0 +1,202 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+}
+
+.App-header {
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.purple {
+  color: yellow;
+}
+
+.rate-container {
+  margin-top: 20px;
+  border-top: 2px solid white;
+}
+
+.rate-container .fa-star {
+  cursor: pointer;
+}
+
+.editIcon{
+  cursor: pointer;
+  margin-left: 10px;
+  color: grey;
+}
+
+.trashIcon {
+  cursor: pointer;
+  margin-left: 10px;
+  color: grey;
+}
+
+.plusIcon {
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+.movieName {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.deleteForm {
+  text-align: center;
+  background-color: grey;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.deleteForm button {
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+
+}
+
+.EditForm {
+  text-align: center;
+  background-color: grey;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.EditForm button {
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.EditForm input {
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+.EditForm textarea {
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+.LoginForm {
+  text-align: center;
+  background-color: grey;
+  padding: 20px 50px 10px 50px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.LoginForm button {
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.LoginForm input {
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+.LoginForm input:focus {
+outline: none;
+  background-color: lightgrey;
+}
+
+.LoginForm button:focus {
+outline: none;
+  background-color: lightgrey;
+}
+
+.LoginForm label {
+  color: white;
+}
+
+.heading {
+  color: white;
+}
+
+.App-header h1 {
+  color: orange;
+}
+
+.App-header h1 .fa-film {
+  color: white;
+  transform: rotate(30deg);
+}
+
+.LoginForm p {
+  padding-top: 20px;
+  color: white;
+}
+
+.signUpHere {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.signUpHere:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+button:disabled {
+  color: lightgrey;
+  cursor: not-allowed;
+}
+
+.fa-sign-out-alt{
+   color: white;
+   font-size: calc(10px + 2vmin);
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+ }
+
+.auth-body {
+  background-color: #282c34;
+}
