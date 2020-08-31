@@ -1,7 +1,7 @@
 
 export default class API {
     static updateMovie(mov_id, body, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/`, {
+        return fetch(`https://movie-rater-geonitic.herokuapp.com/api/movies/${mov_id}/`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ export default class API {
     }
 
     static loginUser(body) {
-        return fetch(`http://127.0.0.1:8000/auth/`, {
+        return fetch(`https://movie-rater-geonitic.herokuapp.com/auth/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ export default class API {
     }
 
     static registerUser(body) {
-        return fetch(`http://127.0.0.1:8000/api/users/`, {
+        return fetch(`https://movie-rater-geonitic.herokuapp.com/api/users/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ export default class API {
     }
 
     static deleteMovie(mov_id, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/`, {
+        return fetch(`https://movie-rater-geonitic.herokuapp.com/api/movies/${mov_id}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ export default class API {
     }
 
     static getMovie(mov_id, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/`, {
+        return fetch(`https://movie-rater-geonitic.herokuapp.com/api/movies/${mov_id}/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export default class API {
     }
 
     static createMovie(body, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/`, {
+        return fetch(`https://movie-rater-geonitic.herokuapp.com/api/movies/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export default class API {
     }
 
     static rateClicked (rate, mov_id, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/rate_movie/`, {
+        return fetch(`https://movie-rater-geonitic.herokuapp.com/api/movies/${mov_id}/rate_movie/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export default class API {
     }
 
     static getDetails (mov_id, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/`, {
+        return fetch(`https://movie-rater-geonitic.herokuapp.com/api/movies/${mov_id}/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ export default class API {
     }
 
     static getMovies (token) {
-        return fetch("http://127.0.0.1:8000/api/movies/", {
+        return fetch("https://movie-rater-geonitic.herokuapp.com/api/movies/", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

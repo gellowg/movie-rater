@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlusSquare, faFilm, faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
 import './App.css';
-import API from "./api-service";
+//import API from "./api-service";
 import MovieList from "./components/movie-list";
 import MovieDetails from "./components/movie-details";
 import MovieForm from "./components/movie-form";
@@ -20,6 +20,7 @@ function App() {
     const [deletedMovie, setDeletedMovie] = useState(null)
     const [data, loading, error] = useFetch();
 
+    setToken()
 
     useEffect(()=>{
         setMovie(data)
