@@ -200,3 +200,7 @@ button:disabled {
 .auth-body {
   background-color: #282c34;
 }
+
+.errorStyle {
+  color: red;
+}

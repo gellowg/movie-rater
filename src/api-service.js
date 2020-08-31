@@ -1,4 +1,3 @@
-const TOKEN = 'a4cc2ec1661474d69c23ff748ad6ea4c0b26ac66';
 
 export default class API {
     static updateMovie(mov_id, body, token) {
@@ -23,7 +22,6 @@ export default class API {
             body: JSON.stringify( body )
         })
             .then( resp => resp.json())
-            .catch(error => console.log(error))
 
     }
 

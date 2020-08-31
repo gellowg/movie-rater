@@ -2,41 +2,63 @@ import React, { useState, useEffect } from "react";
 import API from '../api-service'
 import { useCookies } from "react-cookie";
 
-function Auth(props) {
+function Auth() {
+
+    //TO USE PROPS ADD PROPS TO AUTH BRACKETS ABOVE!!!!
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [isLoginView, setIsLoginView] = useState(true)
+    const [userError, setUserError] = useState(false)
+    const [regError, setRegError] = useState(false)
 
 
     const [token, setToken] = useCookies(['user-token']);
 
-    useEffect( () => {
-        console.log(token.token)
-        if(token['user-token']) window.location.href = '/movies';
-    },[token])
+        useEffect(() => {
+            if (token['user-token']) console.log(token['user-token'])
+            if (token['user-token']) window.location.href = '/movies';
+        },[token])
+
 
 
     const loginClicked = () => {
         API.loginUser({username, password})
-            .then( resp => checkAuth(resp))
-            .then(resp => console.log(resp))
-            .then( resp => setToken('user-token', resp.token))
+            .then(resp => checkToken(resp))
     }
 
-    const checkAuth = (resp) => {
-        if (resp.token === 'undefined') {
-            console.log('username or password incorrect')
-        }else {
-            setToken('user-token', resp.token)
-        }
+    const checkToken = resp => {
+            if (resp.token) {
+                setToken('user-token', resp.token)
+            }else {
+                setUserError(true)
+            }
     }
+
+
 
     const registerClicked = () => {
         API.registerUser({username, password})
-            .then(() => loginClicked())
+            //.then(() => checkReg())
+            .then(resp => checkReg(resp))
     }
 
+    const checkReg = (resp) => {
+        if (!resp.id) {
+            setRegError(true)
+            console.log('nope')
+        }else {
+            loginClicked()
+        }
+    }
+
+    useEffect(() => {
+        if (isLoginView) {
+            setRegError(false)
+        }else {
+            setUserError(false)
+        }
+    }, [isLoginView])
 
 
     return (
@@ -57,12 +79,14 @@ function Auth(props) {
         <input id="password" type="password" placeholder="Password" value={password} onChange={ evt=> setPassword(evt.target.value)} /> <br/>
 
 
-        {isLoginView ? <button onClick={loginClicked}>Login</button> : <button onClick={registerClicked}>Sign Up</button> }
+        {regError ? <p style={{color: "red"}}>A user with that <br/>name already exists.</p> : null}
+        { userError ? <p style={{color: "red"}}>Username or<br/> Password Incorrect.</p> : null}
 
-        {/*{ ? <p>Username or Password Incorrect.</p> : null}*/}
+        {isLoginView ? <button onClick={loginClicked} >Login</button> : <button onClick={registerClicked}>Sign Up</button> }
 
-        {isLoginView ? <p>Don't have an account? <br/> <a className={'signUpHere'} onClick={() => setIsLoginView(false)}>Sign up here.</a></p> :
-            <p>Have an account? <br/> <a className={'signUpHere'} onClick={() => setIsLoginView(true)}>Log in here.</a></p>}
+
+        {isLoginView ? <p>Don't have an account? <br/> <a href={'/#'} className={'signUpHere'} onClick={() => setIsLoginView(false)}>Sign up here.</a></p> :
+            <p>Have an account? <br/> <a href={'/#'} className={'signUpHere'} onClick={() => setIsLoginView(true)}>Log in here.</a></p>}
 
         </div>
         </div>
