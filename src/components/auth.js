@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from '../api-service'
 import { useCookies } from "react-cookie";
+import {Helmet} from "react-helmet";
 
 function Auth() {
 
@@ -63,6 +64,9 @@ function Auth() {
 
     return (
         <div className="App">
+            <Helmet>
+                <meta charSet="utf-8" name="apple-itunes-app" content="app-id=1531619429" />
+            </Helmet>
     <div className="LoginForm">
 
         {isLoginView ? <h1 className={'heading'}>Login</h1> :
