@@ -20,7 +20,9 @@ function App() {
     const [deletedMovie, setDeletedMovie] = useState(null)
     const [data, loading, error] = useFetch();
 
-    setToken()
+    useEffect(() => {
+    if (!token['user-token']) window.location.href = '/';
+}, [token]);
 
     useEffect(()=>{
         setMovie(data)
